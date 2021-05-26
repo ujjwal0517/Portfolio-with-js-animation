@@ -10,7 +10,8 @@
 	--fw-reg: 300;
 	--fw-bold: 900;
 
-	--clr-light: rgb(221, 130, 130);
+	--clr-light:#fff;
+
 	--clr-dark: #303030;
 	--clr-accent: #162992;
 
@@ -27,7 +28,7 @@
 	scroll-behavior: smooth;
 } 
  body{
-background-color: rgba(0,0,0,0.3);
+background-color: var(--clr-dark);
 } 
 section{
 	padding: 5em 2em;
@@ -67,7 +68,7 @@ header{
 	display: flex;
 	justify-content: space-between;
 	padding: 1em;
-	background-color:rgb(221, 130, 130);
+	background-color:var(--clr-dark);
 }
 .logo{
 	max-width: 100px;
@@ -75,7 +76,7 @@ header{
 }
 .nav{
 	position: fixed;
-	background: var(--clr-dark);
+	background: rgba(0,0,0,0.8);
 	color: var(--clr-light);
 	top: 0;
 	bottom: 0;
@@ -97,7 +98,7 @@ header{
 	padding: 0;
 }
 .nav__link{
-color: var(--clr-accent);
+color: #fff;
 font-weight: var(--fw-bold);
 font-size: var(--fs-h1);
 text-decoration: none;
@@ -147,7 +148,7 @@ line-height: 20px;
 .hamburger,
 .hamburger::before, 
 .hamburger::after{
-	background: var(--clr-accent);
+	background: var(--clr-light);
 	width: 2em;
 	height: 3px;
 	border-radius: 1em;
@@ -183,23 +184,75 @@ position: relative;
 box-sizing: border-box;
 
 font-family: var(--ff--secondary);
-background-color: var(--clr-light);
+background-color: var(--clr-dark);
 	
 }
 .about-image{
 	box-shadow: var(--bs);
 }
-.about-head{
+.about-me__body{
+	color: var(--clr-light);
+	padding: 10px;
+	text-align: justify;
+	text-justify:inter-word;
+}
+.head{
 	font-weight: var(--fw-reg);
+	background-color: var(--clr-dark);
+	color: var(--clr-light);
+}
+
+.course{
+	background-color: var(--clr-dark);
+	color: var(--clr-light);
+	margin: 0px auto;
+	height: : 30px;
+
+}
+
+.course ul{
+	list-style: none;
+	padding: 20px;
+	line-height: 30px;
+
+	font-size: var(--fs-h3);
+}
+.course ul li{
+	display: inline;
+}
+.course ul li:hover{
+	color: white;
+	
+}
+
+.hobbies{
+	background-color: var(--clr-dark);
+	color: var(--clr-light);
+	margin: 0px auto;
+
+}
+.hobbies ul{
+	list-style: none;
+	padding: 20px;
+	line-height: 30px;
+	font-size: var(--fs-h3);
+}
+.hobbies ul li{
+	display: inline
+}
+.hobbies ul li:hover{
+	color: white;
+	
 }
 /* typing effect */
 #type{
 	padding-left: 50px;
-	margin-bottom: 5px;
+	margin-bottom: 0px;
 }
 .typing{
 	margin-left: 10px;
 	position: relative;
+	background-color: --var(--clr-accent)
 
 
 }
@@ -234,18 +287,18 @@ background-color: var(--clr-light);
 	
 }
 
-@media (min-width:600px){
+@media (min-width:1239px){
 
 .about{
 	/* background-color: red; */
 	display:grid;
-	
 	margin: 0 auto;
-	grid-column-gap: 1em;
+	grid-column-gap: 5em;
 	align-items: center;
 	grid-template-areas: 
-	"img title";
+	"img body";
 	grid-template-columns: min-content max-content ;
+	
 }
 .btn{
 	color: var(--clr-light);
@@ -257,12 +310,7 @@ background-color: var(--clr-light);
 }
 
 
-.about-head{
-	grid-area: title;
-	padding-top: 50px;
-	padding-left:5px;
-	font-size: var(--fs-h1);
-}
+
 
 #type{
 	padding-left: 50px;
@@ -272,13 +320,66 @@ background-color: var(--clr-light);
  
 .about-image{
 	grid-area: img;
-	
-	
 	min-width: 300px;
 	width: 40%;
 	padding-top: 50px;
 	height: 400px;
 	min-height: 100px;
+}
+.about-me__body{
+	color: var(--clr-light);
+	grid-area: body;
+	min-width: 300px;
+	padding: 10px;
+	width: 50%;
+	text-align: justify;
+	text-justify:inter-word;
+	font-family: var(--ff--secondary);
+	font-size:var(--fs-h3);
+	
+}
+.section{
+	/*display: flex;
+	justify-content: space-between;*/
+	padding: 10px;
+}
+.course{
+	background-color: var(--clr-dark);
+	color: var(--clr-light);
+	margin: 0px auto;
+
+}
+
+.course ul{
+	list-style: none;
+	padding: 20px;
+	line-height: 30px;
+
+	font-size: var(--fs-h3);
+}
+
+.course ul li:hover{
+	color: yellow;
+	
+}
+
+.hobbies{
+	background-color: var(--clr-dark);
+	color: var(--clr-light);
+	
+	margin: 0px auto;
+
+}
+.hobbies ul{
+	list-style: none;
+	padding: 20px;
+	line-height: 30px;
+	font-size: var(--fs-h3);
+}
+
+.hobbies ul li:hover{
+	color: yellow;
+	
 }
 }
 /* services */
@@ -293,8 +394,10 @@ background-color: var(--clr-light);
 text-align: center;
 }
 .section__title--services{
+	font-size: var(--fs-h1);
 	color: white;
 	position: relative;
+	text-align: center;
 
 	
 }
@@ -307,16 +410,22 @@ text-align: center;
 	background: var(--clr-light);
 	opacity: .25;
 }
+
 .services{
-	margin-bottom: 4em;
+	margin: 20px;
+	box-sizing: border-box;
 	
+
 }
-.service{
+.service1, .service2, .service3{
 	max-width: 500px;
-	margin: 0 auto;
+	margin: 5px;
+	
+
 }
-.service p{
-	padding: 10px;
+
+.service1, .service2, .service3, p{
+	padding: 30px;
 	font-size: var(--fs-h3);
 	font-family: var(--ff-primary);
 }
@@ -333,14 +442,37 @@ span{
 @media(min-width: 800px){
 	.services{
 		display: flex;
-		max-width: 1000px;
+		max-width: 2000px;
 		margin-left:  auto;
 		margin-right: auto;
+		align-self: center;
+		
+
 	}
-	.service + .service{
-		margin-left: 2em;
+	.service1, .service2, .service3{
+		margin: 5px;
+		background-color: rgba(0,0,0,0.2);
+		border-radius: 5px;
+		
 	}
+	.service1, .service2, .service3, p{
+	padding: 30px;
+	font-size: var(--fs-h3);
+	font-family: var(--ff-primary);
 }
+.service3:hover{
+	background-color: rgba(0,0,0,0.4);
+}
+.service2:hover{
+	background-color: rgba(0,0,0,0.4);
+}
+.service1:hover{
+	   background-color: rgba(0,0,0,0.4);
+}
+#my_btn{
+	margin-left: 500px;
+}}
+
 
 /* project */
 .work{
@@ -431,131 +563,12 @@ left: -40px;
 .is-hidden{
 	display: none;
 }
-/* about */
-.about-me{
-	max-width: 1000px;
-	margin: 0 auto;
-	background-color: var(--clr-accent);
-	color: var(--clr-light);
-	padding-bottom: 15px;;
-
-}
-.section__title--about{
-		padding-bottom: 10px;
-		text-align: center;
-		
-		color: var(--clr-dark);
-	}
-.about-me__img{
-	box-shadow: var(--bs);
-	background-color: var(--clr-dark);
-}
-.section__subtitle--about{
-		background-color: var(--clr-dark);
-		position: relative;
-		left: -2em;
-		width: calc(100% + 4em);
-		padding-left: 2em;
-		padding-right: calc(200px + 4em);
-		text-align: center;
-	}
-
-@media (min-width: 600px)
-{
-	.about-me{
-		background-color: var(--clr-accent);
-		color: var(--clr-light);
-		display: grid;
-		grid-template-columns: 1fr 200px;
-		grid-template-areas: 
-		"title img"
-		"subtitle img"
-		"text img";
-		grid-column-gap: 2em; 
-	}
-	.section__title--about{
-		grid-area: title;
-		color: var(--clr-dark);
-	}
-	.section__subtitle--about{
-		background-color: var(--clr-dark);
-		grid-column: 1 / -1;
-		grid-row: 2;
-		position: relative;
-		left: -2em;
-		width: calc(100% + 4em);
-		padding-left: 2em;
-		padding-right: calc(200px + 4em);
-		text-align: center;
-	}
-
-	
-	.about-me__img{
-		grid-area: img;
-		min-width: 100px;
-		position: relative;
-		z-index: 2;
-	}
-}
-
-.course{
-	background-color: var(--clr-dark);
-	color: var(--clr-light);
-	width: 65%;
-	margin: 0px auto;
-
-}
-.course ul{
-	list-style: none;
-	padding: 20px;
-	line-height: 30px;
-	font-size: var(--fs-h3);
-}
-.course ul li:hover{
-	color: white;
-	
-}
-
-.hobbies{
-	background-color: var(--clr-light);
-	color: var(--clr-dark);
-	width: 65%;
-	margin: 0px auto;
-
-}
-.hobbies ul{
-	list-style: none;
-	padding: 20px;
-	line-height: 30px;
-	font-size: var(--fs-h3);
-}
-.hobbies ul li:hover{
-	color: white;
-	
-}
-.ambition{
-	background-color: var(--clr-dark);
-	color: var(--clr-light);
-	width: 65%;
-	margin: 0px auto;
-
-}
-.ambition ul{
-	list-style: none;
-	padding: 20px;
-	line-height: 30px;
-	font-size: var(--fs-h3);
-}
-.ambition ul li:hover{
-	color: white;
-	
-}
 
 /* resume */
 .resume{
-	background-color: pink;
+	background-color: var(--clr-light);
 	text-decoration: underline;
-	color: var(--clr-light);
+	color: var(--clr-dark);
 	height: auto;
 	
 }
@@ -572,9 +585,9 @@ left: -40px;
 }
 @media(min-width: 800px){
 	.resume{
-		background-color: pink;
+		background-color: var(--clr-light);
 		text-decoration: underline;
-		color: var(--clr-light);
+		color: var(--clr-dark);
 		height: auto;
 		
 	}

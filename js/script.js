@@ -2,7 +2,7 @@
 
 // About me
 
-let name = ['Ujjwal Dheke.', 'a Junior Web Developer'];
+let name = ['Ujjwal Dheke.', 'a Web Developer'];
 let count=0;
 let index=0;
 let currentText='';
